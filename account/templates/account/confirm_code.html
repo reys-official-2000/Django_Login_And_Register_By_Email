@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Confirm Code | Page | View {% endblock %}
+
+{% block content %}
+    <div class="Div_Login">
+        <form class="form_login" method="post">
+            {% csrf_token %}
+            <div class="flex-column">
+                <label>code </label>
+            </div>
+            <div class="inputForm">
+                <i class="bi bi-patch-check-fill"></i>
+                {{ form.code }}
+            </div>
+
+            <input class="button-submit" type="submit" value="Send"/>
+            <div class="LOD_DIV">
+                <div class="LOD_qp_db00 loaderOOOO"></div>
+            </div>
+        </form>
+    </div>
+{% endblock %}
+
+

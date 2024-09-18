@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Login | Page | View {% endblock %}
+
+{% block content %}
+    <div class="Div_Login">
+        <form class="form_login" method="post">
+            {% csrf_token %}
+            <div class="flex-column">
+                <label>Email </label>
+            </div>
+            <div class="inputForm">
+                <i class="bi bi-at"></i>
+                {{ form.email }}
+            </div>
+
+            <div class="flex-column">
+                <label>Password </label>
+            </div>
+            <div class="inputForm">
+                <i class="bi bi-lock"></i>
+                {{ form.password }}
+            </div>
+            <div class="flex-row">
+                <a href="{% url 'Account:ForgotPassword' %}" class="span">Forgot password?</a>
+            </div>
+            <input class="button-submit" type="submit" value="Login"/>
+            <div class="LOD_DIV">
+                <div class="LOD_qp_db00 loaderOOOO"></div>
+            </div>
+            <p class="p">
+                Don't Have An Account?
+                <a href="{% url 'Account:Register' %}" class="span">Register</a>
+            </p>
+        </form>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} User Panel | Page | View {% endblock %}
+
+{% block content %}
+    <div class="User_Panel">
+        <div class="Panel_Options">
+            <ul>
+                <li>
+                    {% if user.image %}
+                        <img
+                            src="{{ user.image.url }}"
+                            alt="Profile Picture"
+                            class="profile-picture"
+                        />
+                    {% else %}
+                        <img
+                            src="{% static 'images/image_profile.webp' %}"
+                            alt="Default Profile Picture"
+                            class="profile-picture"
+                        />
+                    {% endif %}
+                </li>
+                <li>
+                    <span class="text_My_Account">حساب کاربری</span>
+                </li>
+                <li>
+                    <a style="color: red" href="{% url 'Account:LogoUt' %}" class="text_Logout">خروج از حساب</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="Panel_Contents">
+            <div class="Account_Form">
+                <form class="edit_Account" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="Form_Grid">
+                        <div class="Form_Item">
+                            <h5>نام</h5>
+                            {{ form.name }}
+                        </div>
+                        <div class="Form_Item">
+                            <h5>ایمیل</h5>
+                            {{ form.email }}
+                        </div>
+                        <div class="Form_Item">
+                            <h5>تصویر پروفایل</h5>
+                            {{ form.image }}
+                        </div>
+                    </div>
+                    <div class="Submit_Button">
+                        <input type="submit" value="save"/>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+

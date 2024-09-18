@@ -1,0 +1,32 @@
+﻿/**
+*
+*	Name:			IRANRounded Font
+*	Version:		2.0
+*	Author:			Moslem Ebrahimi (moslemebrahimi.com)
+*	Created on:		Dec 25, 2012
+*	Updated on:		Dec 12, 2015
+*	Website:		http://fontiran.com
+*	Copyright:		Commercial/Proprietary Software
+--------------------------------------------------------------------------------------
+خانواده فونت ایران یک نرم افزار مالکیتی محسوب می شود. جهت آگاهی از قوانین استفاده از این فونت ها لطفا به وب سایت (فونت ایران دات کام) مراجعه نمایید
+--------------------------------------------------------------------------------------
+IRANRounded typeface font are considered a proprietary software. To gain information about the laws regarding the use of these fonts, please visit www.fontiran.com 
+--------------------------------------------------------------------------------------
+This font are used in this project under the license: (.....)
+--------------------------------------------------------------------------------------
+*	
+**/
+
+
+
+@font-face {
+	font-family: IRANRounded;
+	font-style: normal;
+	font-weight: 900;
+	src: url('../fonts/eot/IRAN-Rounded.eot');
+	src: url('../fonts/eot/IRAN-Rounded.eot?#iefix') format('embedded-opentype'),  /* IE6-8 */
+		 url('../fonts/woff/IRAN-Rounded.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+		 url('../fonts/ttf/IRAN-Rounded.ttf') format('truetype');
+}
+
+

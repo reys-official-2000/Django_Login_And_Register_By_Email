@@ -1,0 +1,197 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
+
+@font-face {
+  font-family: "BlackDiamond";
+  src: url(../fonts/BlackDiamond.ttf);
+}
+@font-face {
+  font-family: "Iran_Gerd";
+  src: url(../fonts/Iran_Gerd/IRAN-Rounded.ttf);
+}
+@font-face {
+  font-family: "West_Byanetta";
+  src: url(../fonts/West_Byanetta.otf);
+}
+@font-face {
+  font-family: "TitrZebr";
+  src: url(../fonts/TitrZebr/TitrZebr.ttf);
+}
+
+:root {
+  /*========== My Colors ==========*/
+  --color-Gray: rgba(255, 255, 255, 0.645);
+  --color-Black: #000000d1;
+  --color-Purple: #9d22dd;
+  --color-bg_page: rgb(225, 225, 225);
+
+  /*========== My Fonts ==========*/
+  --font-BlackDiamond: "BlackDiamond";
+  --font-Iran_Gerd: "Iran_Gerd";
+  --font-West_Byanetta: "West_Byanetta";
+  --font-TitrZebr: "TitrZebr";
+  --transition_3s: 0.3s;
+  --transition_5s: 0.5s;
+}
+
+.Model_Details {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 20px;
+  padding-top: 90px;
+}
+
+.Model_Details .Model_image,
+.Model_Details .Similar_Models {
+  grid-column: 1;
+}
+
+.Model_Details .Model_image {
+  padding: 10px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Model_Details .Model_image .div_img {
+  width: 100%;
+  height: 450px;
+}
+.Model_Details .Model_image .div_img img {
+  width: 350px;
+  height: 450px;
+  position: absolute;
+  border-radius: 10px;
+  box-shadow: 0 0 15px var(--color-Black);
+  top: 0;
+}
+
+.Model_Details .List_Model_Detail {
+  grid-column: 2;
+  padding: 10px;
+  grid-row: 1 / span 2;
+  position: relative;
+}
+.Model_Details .List_Model_Detail .Dt {
+  text-align: right;
+  font-size: 20px;
+  font-family: var(--font-Iran_Gerd);
+}
+.Model_Details .Similar_Models {
+  background-color: #c0c4bf;
+  border: solid 1px var(--color-Black);
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  height: 600px;
+  overflow-y: scroll;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.Model_Details .Similar_Models::-webkit-scrollbar {
+  width: 8px;
+  height: 10px;
+  background: #9c22dd17;
+}
+
+.Model_Details .Similar_Models::-webkit-scrollbar-thumb {
+  height: 10px;
+  border: 2px solid transparent;
+  background: var(--color-Purple);
+  border-radius: 10px;
+}
+
+.Model_Details .Similar_Models p {
+  text-align: center;
+  margin-bottom: 10px;
+  color: var(--color-Black);
+  font-family: var(--font-TitrZebr);
+  font-size: 20px;
+  user-select: none;
+}
+.Model_Details .Similar_Models .item_similar {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 300px;
+  padding-bottom: 15px;
+}
+.Model_Details .Similar_Models .item_similar .similar_image {
+  position: relative;
+}
+.Model_Details .Similar_Models .item_similar img {
+  width: 200px;
+  height: 300px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
+}
+.Model_Details .item_similar .name_Description {
+  position: relative;
+}
+.Model_Details .item_similar .name_Description ul {
+  position: absolute;
+  right: 0;
+  top: 10px;
+}
+.Model_Details .item_similar .name_Description li {
+  text-align: right;
+  margin-bottom: 5px;
+  color: var(--color-Black);
+  font-family: var(--font-Iran_Gerd);
+  font-size: 15px;
+}
+@media screen and (min-width: 790px) {
+  .Model_Details .Model_image .div_img img {
+    left: 50px;
+  }
+}
+
+@media screen and (max-width: 790px) {
+  .Model_Details {
+    grid-template-columns: 1fr;
+    padding-top: 70px;
+    gap: 10px;
+  }
+  .Model_Details .Model_image,
+  .Model_Details .Similar_Models,
+  .Model_Details .List_Model_Detail {
+    grid-column: 1;
+  }
+  .Model_Details .List_Model_Detail {
+    grid-row: 2/ 2;
+  }
+  .Model_Details .Model_image .div_img {
+    height: 370px;
+  }
+  .Model_Details .Model_image .div_img img {
+    width: 300px;
+    height: 350px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .Model_Details .Similar_Models {
+    height: 400px;
+  }
+  .Model_Details .Similar_Models .item_similar {
+    grid-template-rows: 200px;
+  }
+  .Model_Details .Similar_Models .item_similar img {
+    width: 150px;
+    height: 200px;
+  }
+  .Model_Details .Similar_Models p {
+    font-size: 16px;
+  }
+  .Model_Details .List_Model_Detail .Dt {
+    font-size: 15px;
+  }
+}

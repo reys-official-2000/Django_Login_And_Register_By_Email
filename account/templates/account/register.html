@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Register | Page | view {% endblock %}
+
+{% block content %}
+    <div class="Div_register">
+        <form class="form_register" method="post">
+            {% csrf_token %}
+            <div class="flex-column">
+                <label>Name</label>
+            </div>
+            <div class="inputForm">
+                <i class="bi bi-person"></i>
+                {{ form.name }}
+            </div>
+
+            <div class="flex-column">
+                <label>Email </label>
+            </div>
+            <div class="inputForm">
+                <i class="bi bi-at"></i>
+                {{ form.email }}
+            </div>
+
+            <div class="flex-column">
+                <label>Password </label>
+            </div>
+            <div class="inputForm">
+                <i class="bi bi-lock"></i>
+                {{ form.password }}
+            </div>
+
+            <div class="flex-column">
+                <label>Repeat Password</label>
+            </div>
+            <div class="inputForm">
+                <i class="bi bi-lock"></i>
+                {{ form.repeat_password }}
+            </div>
+
+            <div class="flex-column">
+                {{ form.code_generation }}
+            </div>
+
+            <div class="inputForm">
+                {{ form.confirm_code }}
+            </div>
+
+            <input class="button-submit" type="submit" value="Send"/>
+            <div class="LOD_DIV">
+                <div class="LOD_qp_db00 loaderOOOO"></div>
+            </div>
+            <p class="p">
+                Already have a account?
+                <a href="{% url 'Account:Login' %}" class="span">Login</a>
+            </p>
+        </form>
+    </div>
+
+{% endblock %}
